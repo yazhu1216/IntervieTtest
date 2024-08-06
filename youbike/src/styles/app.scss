@@ -1,0 +1,97 @@
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 768px;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 70px;
+  border-bottom: solid;
+  border-bottom-color: #EBEBEB;
+  border-bottom-width: 1px;
+  height: 80px;
+
+  color: #677510;
+  position: relative; /* 讓漢堡選單能夠定位 */
+    .logo {
+      width: 95px;
+    }
+    ul {
+      list-style: none;
+      align-items: center;
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-size: 18px;
+        margin: 0 20px;
+        a {
+          color: #677510;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      } 
+    }
+    button {
+      width: 85px;
+      height: 40px;
+      font-size: 18px;
+      background-color: #B5CC22;
+      border-radius: 100px;
+      border: 0;
+      color: #FFF;
+    }
+
+    .hamburger-menu {
+      display: none; /* 默認隱藏漢堡選單按鈕 */
+      cursor: pointer;
+      font-size: 24px;
+    }
+  
+    .menu-items {
+      display: flex; 
+      @media (max-width: $breakpoint-mobile) {
+        z-index: 2000; 
+        width: 100vw;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px; 
+        right: 0;
+        background-color: #B5CC22;
+        padding-top: 10%;
+        padding-left: 10%;
+        height: auto; 
+        min-height: 100vh; 
+        ul{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          li{
+            margin: 20px 5px;
+            font-size: 20px;
+            a {
+              color: #ffffff;
+            }
+          }
+        }
+        button {
+          background-color: #fff;
+          color: #B5CC22;
+          margin-top: 70%;
+        }
+      }
+    }
+  
+    .menu-items.show {
+      display: flex; 
+    }
+  
+    @media (max-width: $breakpoint-mobile) {
+      .hamburger-menu {
+        display: block; /* 手機版時顯示漢堡選單按鈕 */
+      }
+    }
+  }

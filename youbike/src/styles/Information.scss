@@ -1,0 +1,110 @@
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 768px;
+
+
+main {
+  padding: 2% 10%;
+  .search{
+    display: flex;
+  }
+  .form-select{
+    height: 100%;
+    width: 300px;
+    margin: 1%;
+  }
+  .position-relative{
+    height: 100%;
+    width: 300px;
+    margin: 1%;
+  }
+  .filtered-stations-list {
+    max-height: 200px; 
+    overflow-y: auto; 
+    margin-top: -20px; 
+    z-index: 1; 
+  }
+  .container{
+    display: flex;
+
+    .allcheck{
+      .checkusarea{
+        display: flex;
+        flex-wrap: wrap;    
+      }
+      .form-check{
+        margin: 10px;
+      }
+      .form-check-input {
+        width: 20px;
+        height: 20px;
+      }
+      .form-check-input:checked {
+        background-color: #B5CC22;
+        border-color: #B5CC22;
+      }
+      .form-check-input:focus {
+        box-shadow: none;
+      }
+      .form-check-label{
+        padding-left: 10px;
+      }
+    }
+    .image{
+      width: 40%;
+    }
+  }
+  .ubiketable-container {
+    overflow-x: auto; 
+    .ubiketable{
+      border-radius: 20px;
+      width: 100%; 
+      border: 1px solid #ddd; 
+      font-size: 18px;    
+      .tabletitle{
+        border-radius: 20px 20px  0 0;
+        padding: 1.5% 1%;     
+        display: flex;
+        background-color: #B5CC22;
+        color: white;
+        text-align: center;
+      }
+  
+      .tablebody{
+        background-color: #FFF;
+    
+        .item{
+          display: flex;
+          padding: 1.5% 1%;     
+          text-align: center;
+        }    
+        .item:nth-child(odd) {
+          background-color: #F6F6F6;
+        }
+      }
+    }
+  }
+  
+  
+  @media (max-width: $breakpoint-mobile) {
+    .search{
+      display: flex;
+      flex-direction: column;
+      .form-select{
+        width: 100%;
+      }
+      .position-relative{
+        width: 100%;
+      }
+    }
+    .container {
+      .image {
+        display: none;
+      }
+    }
+    .ubiketable-container {
+      .ubiketable {
+        width: 700px;
+      }
+    }
+  }
+}
